@@ -16,6 +16,7 @@ import {
 import { Project } from "../models/Project";
 import type { ITask } from "../models/Task";
 import { useProjects } from "../hooks/useProjects";
+import { findById } from "../utils/findById";
 import FormularioTarefa from "../components/FormularioTarefa";
 
 function DetalheProjeto() {
@@ -31,7 +32,8 @@ function DetalheProjeto() {
   const [busyTaskId, setBusyTaskId] = useState<string | null>(null);
   const [deletingProject, setDeletingProject] = useState(false);
 
-  const dados = projects.find((project) => project.id === id);
+  // Utilização prática da função genérica
+  const dados = id ? findById(projects, id) : undefined;
 
   function abrirNovaTarefa() {
     setEditingTask(null);
