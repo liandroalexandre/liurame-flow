@@ -1,0 +1,53 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Website LIURAME",
+      "description": "Desenvolvimento do website institucional da LIURAME.",
+      "createdAt": "2026-11-10T12:00:00.000Z",
+      "tasks": [
+        {
+          "id": "101",
+          "title": "Criar interface",
+          "description": "Desenvolver o design da página inicial.",
+          "dueDate": "2026-12-01",
+          "status": "concluida",
+          "createdAt": "2026-11-10T12:00:00.000Z"
+        },
+        {
+          "id": "102",
+          "title": "Implementar navegação",
+          "description": "Criar as rotas principais da aplicação.",
+          "dueDate": "2026-12-05",
+          "status": "em-progresso",
+          "createdAt": "2026-11-10T12:00:00.000Z"
+        },
+        {
+          "id": "18252e20-ad85-434e-aa62-589aee1caf2b",
+          "createdAt": "2026-11-11T00:52:54.402Z",
+          "title": "Criar página de contacto",
+          "description": "Desenvolver o formulário de contacto do website1",
+          "dueDate": "2026-12-15",
+          "status": "concluida"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Aplicação LIURAME Flow",
+      "description": "Sistema de gestão de projetos e tarefas.",
+      "createdAt": "2026-11-10T12:00:00.000Z",
+      "tasks": [
+        {
+          "id": "201",
+          "title": "Definir modelos",
+          "description": "Criar as classes Project e Task em TypeScript.",
+          "dueDate": "2026-11-15",
+          "status": "concluida",
+          "createdAt": "2026-11-10T12:00:00.000Z"
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
