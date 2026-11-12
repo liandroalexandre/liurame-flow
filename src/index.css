@@ -1,3 +1,8 @@
+/* =========================================================
+   LIURAME FLOW — ESTILOS GLOBAIS
+   Fonte, configurações gerais e normalização
+   ========================================================= */
+
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
 
 :root {
@@ -38,6 +43,16 @@ a {
 button {
   cursor: pointer;
 }
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   ESTRUTURA PRINCIPAL DA APLICAÇÃO
+   Layout, barra lateral e navegação
+   ========================================================= */
 
 .app-layout {
   display: flex;
@@ -131,6 +146,10 @@ button {
   font-size: 11px;
 }
 
+/* =========================================================
+   ÁREA DE CONTEÚDO E BARRA SUPERIOR
+   ========================================================= */
+
 .app-content {
   flex: 1;
   min-width: 0;
@@ -165,6 +184,10 @@ button {
   padding: 42px 38px;
 }
 
+/* =========================================================
+   TÍTULOS E CABEÇALHOS DAS PÁGINAS
+   ========================================================= */
+
 .page-heading,
 .section-heading {
   display: flex;
@@ -196,6 +219,24 @@ h1 {
   font-size: 14px;
 }
 
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.section-heading span {
+  font-size: 13px;
+  color: #7b879b;
+}
+
+/* =========================================================
+   BOTÕES E ELEMENTOS DE INTERAÇÃO
+   ========================================================= */
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -216,6 +257,41 @@ h1 {
 .btn-primary:hover {
   background: #3153d4;
 }
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: #f1f3f7;
+  color: #68758a;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  background: #e4e9f2;
+}
+
+.icon-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.danger-button {
+  color: #d43b49;
+  background: #fff0f1;
+}
+
+.danger-button:hover {
+  background: #ffe0e3;
+}
+
+/* =========================================================
+   DASHBOARD — CARTÕES DE ESTATÍSTICAS
+   ========================================================= */
 
 .stats-grid {
   display: grid;
@@ -253,19 +329,9 @@ h1 {
   font-size: 32px;
 }
 
-.section-heading {
-  margin-bottom: 20px;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.section-heading span {
-  font-size: 13px;
-  color: #7b879b;
-}
+/* =========================================================
+   PROJETOS — GRELHA, CARTÕES E INDICADORES
+   ========================================================= */
 
 .projects-grid {
   display: grid;
@@ -354,72 +420,22 @@ h1 {
   font-weight: 700;
 }
 
-.empty-state {
-  padding: 40px;
-  text-align: center;
+/* Ações de edição e eliminação de projetos */
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
 }
 
-.empty-state p {
-  color: #7b879b;
+.project-actions .btn {
+  gap: 8px;
 }
 
-.error-message {
-  padding: 16px;
-  background: #fff0f0;
-  color: #a32b2b;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 900px) {
-  .sidebar {
-    width: 190px;
-  }
-
-  .stats-grid,
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .main-content {
-    padding: 28px 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .app-layout {
-    display: block;
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 16px;
-  }
-
-  .brand {
-    margin-bottom: 16px;
-  }
-
-  .sidebar-footer {
-    display: none;
-  }
-
-  .topbar {
-    height: 60px;
-    padding: 0 20px;
-  }
-
-  .page-heading {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  h1 {
-    font-size: 26px;
-  }
-}
-
-/* Formulários do LIURAME Flow */
+/* =========================================================
+   FORMULÁRIOS — PROJETOS E TAREFAS
+   ========================================================= */
 
 .form-group {
   display: flex;
@@ -456,10 +472,27 @@ h1 {
   resize: vertical;
 }
 
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+/* Formulário específico das tarefas */
+
+.task-form {
+  margin-bottom: 24px;
 }
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.form-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* =========================================================
+   TAREFAS — LISTAGEM, CARTÕES E ESTADOS
+   ========================================================= */
 
 .tasks-list {
   display: grid;
@@ -507,6 +540,8 @@ button:disabled {
   white-space: nowrap;
 }
 
+/* Cores distintas para facilitar a leitura dos estados */
+
 .status-pendente {
   background: #f1f3f7;
   color: #68758a;
@@ -522,49 +557,7 @@ button:disabled {
   color: #19834d;
 }
 
-@media (max-width: 600px) {
-  .task-card {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-/* Formulário de tarefas */
-
-.task-form {
-  margin-bottom: 24px;
-}
-
-.form-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 22px;
-}
-
-.form-header h3 {
-  margin: 0;
-  font-size: 18px;
-}
-
-.icon-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border: 0;
-  border-radius: 8px;
-  background: #f1f3f7;
-  color: #68758a;
-  cursor: pointer;
-}
-
-.icon-button:hover {
-  background: #e4e9f2;
-}
-
-/* Ações das tarefas */
+/* Ações disponíveis em cada tarefa */
 
 .task-actions {
   display: flex;
@@ -574,42 +567,104 @@ button:disabled {
   gap: 9px;
 }
 
-.danger-button {
-  color: #d43b49;
-  background: #fff0f1;
+/* =========================================================
+   MENSAGENS E ESTADOS ESPECIAIS
+   ========================================================= */
+
+.empty-state {
+  padding: 40px;
+  text-align: center;
 }
 
-.danger-button:hover {
-  background: #ffe0e3;
+.empty-state p {
+  color: #7b879b;
 }
 
-.icon-button:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
+.error-message {
+  padding: 16px;
+  background: #fff0f0;
+  color: #a32b2b;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 600px) {
-  .task-actions {
-    justify-content: flex-start;
+/* =========================================================
+   RESPONSIVIDADE — TABLETS E ECRÃS MÉDIOS
+   Até 900px: reduz a barra lateral e apresenta as
+   grelhas numa única coluna para melhorar a leitura.
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .stats-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 28px 20px;
   }
 }
 
-/* Ações dos projetos */
-
-.project-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-.project-actions .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
+/* =========================================================
+   RESPONSIVIDADE — TELEMÓVEIS
+   Até 600px: reorganiza a navegação e os cartões
+   para facilitar a utilização em ecrãs pequenos.
+   ========================================================= */
 
 @media (max-width: 600px) {
+  /* A barra lateral passa a ocupar a largura do ecrã */
+
+  .app-layout {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .brand {
+    margin-bottom: 16px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  /* Ajustes na barra superior e nos títulos */
+
+  .topbar {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  /* Os cartões de tarefas passam a apresentar
+     o conteúdo verticalmente */
+
+  .task-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* As ações alinham à esquerda em ecrãs pequenos */
+
+  .task-actions {
+    justify-content: flex-start;
+  }
+
   .project-actions {
     width: 100%;
   }

@@ -28,7 +28,7 @@ function FormularioTarefa({ project, task, onClose }: FormularioTarefaProps) {
     setError("");
 
     const updatedTask = new Task(
-      task?.id ?? crypto.randomUUID(),
+      task?.id ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`,
       title.trim(),
       description.trim(),
       dueDate,

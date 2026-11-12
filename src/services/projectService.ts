@@ -1,7 +1,7 @@
 
-import type { IProject } from '../models/Project';
+import type { IProject } from "../models/Project";
 
-const API_URL = 'http://localhost:3001/projects';
+const API_URL = "/api/projects";
 
 async function verificarResposta(
     response: Response
@@ -32,11 +32,11 @@ export async function criarProjeto(
     projeto: IProject
 ): Promise<IProject> {
     const response = await fetch(API_URL, {
-        method: 'POST',
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
         },
-        body: JSON.stringify(projeto)
+        body: JSON.stringify(projeto),
     });
 
     await verificarResposta(response);
@@ -49,11 +49,11 @@ export async function atualizarProjeto(
     const response = await fetch(
         `${API_URL}/${encodeURIComponent(projeto.id)}`,
         {
-            method: 'PUT',
+            method: "PUT",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(projeto)
+            body: JSON.stringify(projeto),
         }
     );
 
@@ -67,7 +67,7 @@ export async function eliminarProjeto(
     const response = await fetch(
         `${API_URL}/${encodeURIComponent(id)}`,
         {
-            method: 'DELETE'
+            method: "DELETE",
         }
     );
 

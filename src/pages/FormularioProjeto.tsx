@@ -75,7 +75,8 @@ function ProjectForm({
     setError("");
 
     const project = new Project(
-      existingProject?.id ?? crypto.randomUUID(),
+      existingProject?.id ??
+        `${Date.now()}-${Math.random().toString(36).slice(2)}`,
       name.trim(),
       description.trim(),
       existingProject?.tasks ?? [],
